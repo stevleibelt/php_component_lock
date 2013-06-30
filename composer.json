@@ -1,9 +1,9 @@
 {
-    "name": "net_bazzline/component_shutdown",
+    "name": "net_bazzline/component_lock",
     "type": "library",
-    "description": "php component shutdown",
-    "keywords": ["php", "net_bazzline", "component", "shutdown"],
-    "homepage": "https://github.com/stevleibelt/php_component_shutdown",
+    "description": "php component lock",
+    "keywords": ["php", "net_bazzline", "component", "lock"],
+    "homepage": "https://github.com/stevleibelt/php_component_lock",
     "license": "GPLv3",
     "authors": [
 	    {
@@ -24,8 +24,8 @@
     },
     "autoload": {
         "psr-0": {
-            "Net\\Bazzline\\Component\\Shutdown\\": "source/",
-            "Test\\Net\\Bazzline\\Component\\Shutdown\\": "test/"
+            "Net\\Bazzline\\Component\\Lock\\": "source/",
+            "Test\\Net\\Bazzline\\Component\\Lock\\": "test/"
         }
     }
 }
