@@ -10,7 +10,7 @@
          stopOnSkipped="false">
 
     <testsuites>
-        <testsuite name="Shutdown Test Suite">
+        <testsuite name="Lock Test Suite">
             <directory>test/</directory>
         </testsuite>
     </testsuites>
