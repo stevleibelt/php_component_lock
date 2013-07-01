@@ -46,7 +46,6 @@ interface LockInterface
      * Returns name or default
      *
      * @return string
-     * @return \InvalidArgumentException
      * @author stev leibelt <artodeto@arcor.de>
 	 * @since 2013-01-03
 	 */

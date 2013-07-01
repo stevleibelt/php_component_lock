@@ -18,7 +18,7 @@ use RuntimeException;
 class FileLock implements LockInterface
 {
 	/**
-	 * @author stev leibelt
+     * @author stev leibelt <artodeto@arcor.de>
 	 * @var string
 	 * @since 2013-01-03
 	 */
@@ -108,7 +108,7 @@ class FileLock implements LockInterface
      *
      * @param string $string
      * @return bool
-     * @author sleibelt
+     * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-07-01
      */
     private function stringEndsWithDotLock($string)
