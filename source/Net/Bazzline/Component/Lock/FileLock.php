@@ -26,9 +26,9 @@ class FileLock extends LockAbstract
 			throw new RuntimeException(
                 'Can not acquire lock, lock already exists.'
             );
-		} else {
-			touch($this->getName());
 		}
+
+        touch($this->getName());
 	}
 
 	/**
@@ -36,13 +36,13 @@ class FileLock extends LockAbstract
 	 */
 	public function release()
 	{
-		if ($this->isLocked()) {
-			unlink($this->getName());
-		} else {
+		if (!$this->isLocked()) {
 			throw new RuntimeException(
                 'Can not release lock, no lock exists.'
             );
 		}
+
+        unlink($this->getName());
 	}
 
 	/**
