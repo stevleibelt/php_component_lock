@@ -6,6 +6,8 @@
 
 namespace Net\Bazzline\Component\Lock;
 
+use RuntimeException;
+
 /**
  * Class RuntimeLock
  *
@@ -21,6 +23,22 @@ class RuntimeLock extends LockAbstract
      * @since 2013-07-01
      */
     private $isLocked;
+
+	/**
+     * {$inheritDoc}
+	 */
+	public function getName()
+	{
+        return (is_null($this->name)) ? __CLASS__ : $this->name;
+	}
+
+	/**
+     * {$inheritDoc}
+	 */
+	public function setName($name)
+	{
+		$this->name = (string) $name;
+	}
 
     /**
      * {$inheritDoc}
