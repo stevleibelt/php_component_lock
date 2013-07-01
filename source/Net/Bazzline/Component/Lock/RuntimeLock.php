@@ -15,8 +15,15 @@ use RuntimeException;
  * @author stev leibelt <artodeto@arcor.de>
  * @since 2013-07-01
  */
-class RuntimeLock extends LockAbstract
+class RuntimeLock implements LockInterface
 {
+    /**
+     * @var string
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-07-01
+     */
+    private $name;
+
     /**
      * @var boolean
      * @author stev leibelt <artodeto@arcor.de>
@@ -29,7 +36,7 @@ class RuntimeLock extends LockAbstract
 	 */
 	public function getName()
 	{
-        return (is_null($this->name)) ? __CLASS__ : $this->name;
+        return (is_null($this->name)) ? str_replace('\\', '_', get_class($this)) : $this->name;
 	}
 
 	/**

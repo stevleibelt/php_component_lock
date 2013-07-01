@@ -46,6 +46,7 @@ interface LockInterface
      * Returns name or default
      *
      * @return string
+     * @return \InvalidArgumentException
      * @author stev leibelt <artodeto@arcor.de>
 	 * @since 2013-01-03
 	 */
@@ -54,7 +55,7 @@ interface LockInterface
 	/**
      * Sets name
      *
-	 * @param string $name, name of the current lock
+	 * @param string $name - name of the lock
      * @author stev leibelt <artodeto@arcor.de>
 	 * @since 2013-01-03
 	 */
