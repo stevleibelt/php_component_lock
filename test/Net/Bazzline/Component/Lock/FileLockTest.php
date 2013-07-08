@@ -8,7 +8,7 @@ namespace Test\Net\Bazzline\Component\Lock;
 
 use Net\Bazzline\Component\Lock\FileLock;
 use PHPUnit_Framework_TestCase;
-use \RuntimeException;
+use RuntimeException;
 use ReflectionClass;
 
 /**
