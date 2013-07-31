@@ -32,7 +32,7 @@ class RuntimeLock implements LockInterface
     private $isLocked;
 
 	/**
-     * {$inheritdoc}
+     * @{inheritdoc}
 	 */
 	public function getName()
 	{
@@ -40,7 +40,7 @@ class RuntimeLock implements LockInterface
 	}
 
 	/**
-     * {$inheritdoc}
+     * @{inheritdoc}
 	 */
 	public function setName($name)
 	{
@@ -48,7 +48,7 @@ class RuntimeLock implements LockInterface
 	}
 
     /**
-     * {$inheritdoc}
+     * @{inheritdoc}
      */
     public function isLocked()
     {
@@ -58,7 +58,7 @@ class RuntimeLock implements LockInterface
 
 
     /**
-     * {$inheritdoc}
+     * @{inheritdoc}
      */
     public function acquire()
     {
@@ -74,7 +74,7 @@ class RuntimeLock implements LockInterface
 
 
     /**
-     * {$inheritdoc}
+     * @{inheritdoc}
      */
     public function release()
     {

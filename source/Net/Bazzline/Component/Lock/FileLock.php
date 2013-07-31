@@ -25,7 +25,7 @@ class FileLock implements LockInterface
 	protected $name;
 
 	/**
-     * {$inheritdoc}
+     * @{inheritdoc}
 	 */
 	public function getName()
 	{
@@ -37,7 +37,7 @@ class FileLock implements LockInterface
 	}
 
 	/**
-     * {$inheritdoc}
+     * @{inheritdoc}
      * @param string $name - adds a '.lock' if not exists
 	 */
 	public function setName($name)
@@ -66,7 +66,7 @@ class FileLock implements LockInterface
 	}
 
 	/**
-     * {$inheritdoc}
+     * @{inheritdoc}
 	 */
 	public function acquire()
 	{
@@ -80,7 +80,7 @@ class FileLock implements LockInterface
 	}
 
 	/**
-     * {$inheritdoc}
+     * @{inheritdoc}
 	 */
 	public function release()
 	{
@@ -94,7 +94,7 @@ class FileLock implements LockInterface
 	}
 
 	/**
-     * {$inheritdoc}
+     * @{inheritdoc}
 	 */
 	public function isLocked()
 	{
