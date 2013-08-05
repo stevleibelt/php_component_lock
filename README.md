@@ -10,7 +10,7 @@ This component was created by splitting up the [PHP_Bazzline_Utility](https://gi
 
 ## Implementations
 
-Two implementations exists. The FileLock and the RuntimeLock.
+Two implementations exists. The *FileLock* and the *RuntimeLock*.
 
 ### RuntimeLock
 
@@ -22,6 +22,8 @@ The FileLock can be used to lock an class from instantiated multiple times. This
 
 ## History
 
+* 1.0.2
+    * Added constructor with optional parameter $name for *FileLock* and *RuntimeLock*
 * 1.0.1
     * Switched to LGPLv3
 * v1.0.0
