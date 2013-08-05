@@ -2,7 +2,9 @@
 
 ## General
 
-This component provides the LockInterface as well as an LockAwareInterface. It comes with two implementations of the LockInterface. You can use this interface to lock classes or processes to prevent changes in an object (so you freeze/lock the class for property setting) or lock an existing process (like cronjob) to prevent double execution.
+This component provides the *LockInterface* as well as an *LockAwareInterface*. It comes with two implementations of the LockInterface.
+
+You can use this interface to lock classes or processes to prevent changes in an object (so you freeze/lock the class for property setting) or lock an existing process (like a cronjob) to prevent double execution.
 
 This component was created by splitting up the [PHP_Bazzline_Utility](https://github.com/stevleibelt/PHP_Bazzline_Utility) repository.
 
@@ -20,7 +22,9 @@ The FileLock can be used to lock an class from instantiated multiple times. This
 
 ## History
 
-    * v1.0.0
-        * Finished LockInterface and LockAwareInterface
-        * Added implementation for FileLock and RuntimeLock
-        * Covered implementations with unittest
+* 1.0.1
+    * Switched to LGPLv3
+* v1.0.0
+    * Finished *LockInterface* and *LockAwareInterface*
+    * Added implementation for *FileLock* and *RuntimeLock*
+    * Covered implementations with unittest
