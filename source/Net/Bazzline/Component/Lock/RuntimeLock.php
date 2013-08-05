@@ -31,6 +31,18 @@ class RuntimeLock implements LockInterface
      */
     private $isLocked;
 
+    /**
+     * @param string $name
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-08-05
+     */
+    public function __construct($name = '')
+    {
+        if (strlen($name) > 0) {
+            $this->setName($name);
+        }
+    }
+
 	/**
      * @{inheritdoc}
 	 */
