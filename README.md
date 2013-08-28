@@ -1,5 +1,8 @@
 # php_component_lock
 
+The build status of the current master branch is tracked by Travis CI: 
+[![Build Status](https://travis-ci.org/stevleibelt/php_component_lock.png?branch=master)](http://travis-ci.org/stevleibelt/php_component_lock)
+
 ## General
 
 This component provides the LockInterface as well as an LockAwareInterface. It comes with two implementations of the LockInterface. You can use this interface to lock classes or processes to prevent changes in an object (so you freeze/lock the class for property setting) or lock an existing process (like cronjob) to prevent double execution.
