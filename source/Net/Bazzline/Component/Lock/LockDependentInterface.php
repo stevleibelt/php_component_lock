@@ -1,26 +1,26 @@
 <?php
 /**
  * @author stev leibelt <artodeto@arcor.de>
- * @since 2013-06-30 
+ * @since 2014-04-24
  */
 
 namespace Net\Bazzline\Component\Lock;
 
 /**
- * Class LockAwareInterface
+ * Class LockDependentInterface
  *
  * @package Net\Bazzline\Component\Lock
  * @author stev leibelt <artodeto@arcor.de>
- * @since 2013-06-30
+ * @since 2014-04-24
  */
-interface LockAwareInterface extends LockDependentInterface
+interface LockDependentInterface
 {
     /**
-     * Get Lock
+     * Set Lock
      *
-     * @return LockInterface
+     * @param LockInterface $lock
      * @author stev leibelt <artodeto@arcor.de>
-     * @since 2013-06-30
+     * @since 2014-04-24
      */
-    public function getLock();
+    public function setLock(LockInterface $lock);
 }
