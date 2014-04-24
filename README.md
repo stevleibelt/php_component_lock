@@ -25,13 +25,13 @@ The FileLock can be used to lock an class from instantiated multiple times. This
 
 ## History
 
-* 1.0.3
+* [1.0.3](https://github.com/stevleibelt/php_component_lock/tree/1.0.3)
     * Added LockDependentInterface 
-* 1.0.2
+* [1.0.2](https://github.com/stevleibelt/php_component_lock/tree/1.0.2)
     * Added constructor with optional parameter $name for *FileLock* and *RuntimeLock*
-* 1.0.1
+* [1.0.1](https://github.com/stevleibelt/php_component_lock/tree/1.0.1)
     * Switched to LGPLv3
-* v1.0.0
+* [1.0.0](https://github.com/stevleibelt/php_component_lock/tree/v1.0.0)
     * Finished *LockInterface* and *LockAwareInterface*
     * Added implementation for *FileLock* and *RuntimeLock*
     * Covered implementations with unittest
