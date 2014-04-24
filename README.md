@@ -9,7 +9,7 @@ This component provides the *LockInterface* as well as an *LockAwareInterface*. 
 
 You can use this interface to lock classes or processes to prevent changes in an object (so you freeze/lock the class for property setting) or lock an existing process (like a cronjob) to prevent double execution.
 
-This component was created by splitting up the [PHP_Bazzline_Utility](https://github.com/stevleibelt/PHP_Bazzline_Utility) repository.
+This component was created by splitting up the [PHP_Bazzline_Utility](https://github.com/stevleibelt/archive/tree/master/php/bazzlineUtility) repository.
 
 # Implementations
 
