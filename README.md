@@ -25,6 +25,8 @@ The FileLock can be used to lock an class from instantiated multiple times. This
 
 ## History
 
+* 1.0.3
+    * Added LockDependentInterface 
 * 1.0.2
     * Added constructor with optional parameter $name for *FileLock* and *RuntimeLock*
 * 1.0.1
