@@ -1,6 +1,6 @@
 <?php
 /**
- * @author stev leibelt <artodeto@arcor.de>
+ * @author stev leibelt <artodeto@bazzline.net>
  * @since 2013-07-01
  */
 
@@ -12,28 +12,28 @@ use RuntimeException;
  * Class RuntimeLock
  *
  * @package Net\Bazzline\Component\Lock
- * @author stev leibelt <artodeto@arcor.de>
+ * @author stev leibelt <artodeto@bazzline.net>
  * @since 2013-07-01
  */
 class RuntimeLock implements LockInterface
 {
     /**
      * @var string
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-07-01
      */
     private $name;
 
     /**
      * @var boolean
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-07-01
      */
     private $isLocked;
 
     /**
      * @param string $name
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-08-05
      */
     public function __construct($name = '')

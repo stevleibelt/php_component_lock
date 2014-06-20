@@ -1,6 +1,6 @@
 <?php
 /**
- * @author stev leibelt <artodeto@arcor.de>
+ * @author stev leibelt <artodeto@bazzline.net>
  * @since 2013-06-30 
  */
 
@@ -15,13 +15,13 @@ use ReflectionClass;
  * Class FileLockTest
  *
  * @package Test\Net\Bazzline\Component\Lock
- * @author stev leibelt <artodeto@arcor.de>
+ * @author stev leibelt <artodeto@bazzline.net>
  * @since 2013-07-01
  */
 class RuntimeLockTest extends PHPUnit_Framework_TestCase
 {
     /**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-07-01
      */
     public function testShutdownInterfaceImplemented()
@@ -33,7 +33,7 @@ class RuntimeLockTest extends PHPUnit_Framework_TestCase
     }
 
 	/**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-07-01
 	 */
 	public function testGetAndSetName()
@@ -47,7 +47,7 @@ class RuntimeLockTest extends PHPUnit_Framework_TestCase
 	}
 
 	/**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-07-01
 	 */
 	public function testIsLocked_withNoExistingLock()
@@ -58,7 +58,7 @@ class RuntimeLockTest extends PHPUnit_Framework_TestCase
 	}
 
 	/**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-07-01
 	 */
 	public function testIsLocked_withExistingLock()
@@ -70,7 +70,7 @@ class RuntimeLockTest extends PHPUnit_Framework_TestCase
 	}
 
 	/**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-07-01
 	 */
 	public function testLock_withNoExistingLock()
@@ -86,7 +86,7 @@ class RuntimeLockTest extends PHPUnit_Framework_TestCase
      * @expectedException \RuntimeException
      * @expectedExceptionMessage Can not acquire lock, lock already exists.
      *
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-07-01
 	 */
 	public function testLock_withExistingLock()
@@ -100,7 +100,7 @@ class RuntimeLockTest extends PHPUnit_Framework_TestCase
 	}
 
 	/**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-07-01
 	 */
 	public function testUnlock_withExistingLock()
@@ -117,7 +117,7 @@ class RuntimeLockTest extends PHPUnit_Framework_TestCase
      * @expectedException \RuntimeException
      * @expectedExceptionMessage Can not release lock, no lock exists.
      *
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-07-01
 	 */
 	public function testUnlock_withNoExistingLock()

@@ -1,6 +1,6 @@
 <?php
 /**
- * @author stev leibelt <artodeto@arcor.de>
+ * @author stev leibelt <artodeto@bazzline.net>
  * @since 2013-06-30 
  */
 
@@ -12,21 +12,21 @@ use RuntimeException;
  * Class FileLock
  *
  * @package Net\Bazzline\Component\Lock
- * @author stev leibelt <artodeto@arcor.de>
+ * @author stev leibelt <artodeto@bazzline.net>
  * @since 2013-06-30
  */
 class FileLock implements LockInterface
 {
 	/**
 	 * @var string
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
 	 * @since 2013-01-03
 	 */
 	protected $name;
 
     /**
      * @param string $name
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-08-05
      */
     public function __construct($name = '')
@@ -59,7 +59,7 @@ class FileLock implements LockInterface
 
 	/**
 	 * @return boolean
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-06-30
 	 */
 	protected function isValidName()
@@ -69,7 +69,7 @@ class FileLock implements LockInterface
 
 	/**
 	 * @return string
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-06-30
 	 */
 	protected function getDefaultName()
@@ -120,7 +120,7 @@ class FileLock implements LockInterface
      *
      * @param string $string
      * @return bool
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-07-01
      */
     private function stringEndsWithDotLock($string)

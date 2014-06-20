@@ -1,6 +1,6 @@
 <?php
 /**
- * @author stev leibelt <artodeto@arcor.de>
+ * @author stev leibelt <artodeto@bazzline.net>
  * @since 2013-06-30 
  */
 
@@ -15,20 +15,20 @@ use ReflectionClass;
  * Class FileLockTest
  *
  * @package Test\Net\Bazzline\Component\Lock
- * @author stev leibelt <artodeto@arcor.de>
+ * @author stev leibelt <artodeto@bazzline.net>
  * @since 2013-06-30
  */
 class FileLockTest extends PHPUnit_Framework_TestCase
 {
 	/**
 	 * @var string
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
 	 * @since 2013-01-03
 	 */
 	private $lockFilePath;
 
 	/**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
 	 * @since 2013-01-03
 	 */
 	protected function setUp()
@@ -37,7 +37,7 @@ class FileLockTest extends PHPUnit_Framework_TestCase
 	}
 
 	/**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
 	 * @since 2013-01-03
 	 */
 	protected function tearDown()
@@ -46,7 +46,7 @@ class FileLockTest extends PHPUnit_Framework_TestCase
 	}
 
     /**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-01-29
      */
     public function testShutdownInterfaceImplemented()
@@ -58,7 +58,7 @@ class FileLockTest extends PHPUnit_Framework_TestCase
     }
 
 	/**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
 	 * @since 2013-01-03
 	 */
 	public function testGetAndSetName()
@@ -71,7 +71,7 @@ class FileLockTest extends PHPUnit_Framework_TestCase
 	}
 
 	/**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
 	 * @since 2013-01-03
 	 */
 	public function testIsLocked_withNoExistingLock()
@@ -82,7 +82,7 @@ class FileLockTest extends PHPUnit_Framework_TestCase
 	}
 
 	/**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
 	 * @since 2013-01-03
 	 */
 	public function testIsLocked_withExistingLock()
@@ -94,7 +94,7 @@ class FileLockTest extends PHPUnit_Framework_TestCase
 	}
 
 	/**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
 	 * @since 2013-01-03
 	 */
 	public function testLock_withNoExistingLock()
@@ -111,7 +111,7 @@ class FileLockTest extends PHPUnit_Framework_TestCase
 	}
 
 	/**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
 	 * @since 2013-01-03
 	 */
 	public function testLock_withExistingLock()
@@ -132,7 +132,7 @@ class FileLockTest extends PHPUnit_Framework_TestCase
 	}
 
 	/**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
 	 * @since 2013-01-03
 	 */
 	public function testUnlock_withExistingLock()
@@ -150,7 +150,7 @@ class FileLockTest extends PHPUnit_Framework_TestCase
 	}
 
 	/**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
 	 * @since 2013-01-03
 	 */
 	public function testUnlock_withNoExistingLock()
@@ -170,7 +170,7 @@ class FileLockTest extends PHPUnit_Framework_TestCase
 	}
 
 	/**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
 	 * @since 2013-01-03
 	 */
 	private function acquireLock()
@@ -179,7 +179,7 @@ class FileLockTest extends PHPUnit_Framework_TestCase
 	}
 
 	/**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
 	 * @since 2013-01-03
 	 */
 	private function releaseLock()
