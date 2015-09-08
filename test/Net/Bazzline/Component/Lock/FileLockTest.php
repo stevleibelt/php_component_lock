@@ -6,7 +6,7 @@
 
 namespace Test\Net\Bazzline\Component\Lock;
 
-use Net\Bazzline\Component\Lock\FileLock;
+use Net\Bazzline\Component\Lock\FileNameLock;
 use PHPUnit_Framework_TestCase;
 use RuntimeException;
 use ReflectionClass;
@@ -15,65 +15,40 @@ use ReflectionClass;
  * Class FileLockTest
  *
  * @package Test\Net\Bazzline\Component\Lock
- * @author stev leibelt <artodeto@bazzline.net>
- * @since 2013-06-30
  */
 class FileLockTest extends PHPUnit_Framework_TestCase
 {
-	/**
-	 * @var string
-     * @author stev leibelt <artodeto@bazzline.net>
-	 * @since 2013-01-03
-	 */
+	/** @var string */
 	private $lockFilePath;
 
-	/**
-     * @author stev leibelt <artodeto@bazzline.net>
-	 * @since 2013-01-03
-	 */
 	protected function setUp()
 	{
+        //@todo use vfsStream
 		$this->lockFilePath = '/tmp/' . str_replace('\\', '_', get_class($this));
 	}
 
-	/**
-     * @author stev leibelt <artodeto@bazzline.net>
-	 * @since 2013-01-03
-	 */
 	protected function tearDown()
 	{
 		$this->releaseLock();
 	}
 
-    /**
-     * @author stev leibelt <artodeto@bazzline.net>
-     * @since 2013-01-29
-     */
     public function testShutdownInterfaceImplemented()
     {
-        $className = get_class($this->getNewLock());
-        $reflectionObject = new ReflectionClass($className);
+        $className  = get_class($this->getNewLock());
+        $reflection = new ReflectionClass($className);
 
-        $this->assertTrue($reflectionObject->implementsInterface('\Net\Bazzline\Component\Lock\LockInterface'));
+        $this->assertTrue($reflection->implementsInterface('\Net\Bazzline\Component\Lock\LockInterface'));
     }
 
-	/**
-     * @author stev leibelt <artodeto@bazzline.net>
-	 * @since 2013-01-03
-	 */
-	public function testGetAndSetName()
+	public function testGetAndSetResource()
 	{
 		$lock = $this->getNewLock(false);
 
-		$this->assertTrue((strlen($lock->getName()) > 0));
-		$lock->setName($this->lockFilePath);
-		$this->assertEquals($this->lockFilePath . '.lock', $lock->getName());
+		$this->assertTrue((strlen($lock->getResource()) > 0));
+		$lock->setResource($this->lockFilePath);
+		$this->assertEquals($this->lockFilePath . '.lock', $lock->getResource());
 	}
 
-	/**
-     * @author stev leibelt <artodeto@bazzline.net>
-	 * @since 2013-01-03
-	 */
 	public function testIsLocked_withNoExistingLock()
 	{
 		$lock = $this->getNewLock();
@@ -81,10 +56,6 @@ class FileLockTest extends PHPUnit_Framework_TestCase
 		$this->assertFalse($lock->isLocked());
 	}
 
-	/**
-     * @author stev leibelt <artodeto@bazzline.net>
-	 * @since 2013-01-03
-	 */
 	public function testIsLocked_withExistingLock()
 	{
 		$this->acquireLock();
@@ -93,95 +64,53 @@ class FileLockTest extends PHPUnit_Framework_TestCase
 		$this->assertTrue($lock->isLocked());
 	}
 
-	/**
-     * @author stev leibelt <artodeto@bazzline.net>
-	 * @since 2013-01-03
-	 */
 	public function testLock_withNoExistingLock()
 	{
 		$lock = $this->getNewLock();
 
-		try {
-			$this->assertFalse($lock->isLocked());
-			$lock->acquire();
-		} catch (\RuntimeException $exception) {
-			$this->fail('no exception expected.' . PHP_EOL . $exception->getMessage());
-		}
+        $this->assertFalse($lock->isLocked());
+        $lock->acquire();
 		$this->assertTrue($lock->isLocked());
 	}
 
-	/**
-     * @author stev leibelt <artodeto@bazzline.net>
-	 * @since 2013-01-03
-	 */
+    /**
+     * @expectedException \RuntimeException
+     */
 	public function testLock_withExistingLock()
 	{
 		$this->acquireLock();
 		$lock = $this->getNewLock();
 
 		$this->assertTrue($lock->isLocked());
-		try {
-			$lock->acquire();
-		} catch (\RuntimeException $exception) {
-			$this->assertTrue($lock->isLocked());
-			$this->assertEquals('Can not acquire lock, lock already exists.', $exception->getMessage());
-
-			return 0;
-		}
-		$this->fail('Exception expected.');
+        $lock->acquire();
 	}
 
-	/**
-     * @author stev leibelt <artodeto@bazzline.net>
-	 * @since 2013-01-03
-	 */
 	public function testUnlock_withExistingLock()
 	{
 		$this->acquireLock();
 		$lock = $this->getNewLock();
 
-		try {
-			$this->assertTrue($lock->isLocked());
-			$lock->release();
-		} catch (\RuntimeException $exception) {
-			$this->fail('no exception expected.' . PHP_EOL . $exception->getMessage());
-		}
+        $this->assertTrue($lock->isLocked());
+        $lock->release();
 		$this->assertFalse($lock->isLocked());
 	}
 
-	/**
-     * @author stev leibelt <artodeto@bazzline.net>
-	 * @since 2013-01-03
-	 */
+    /**
+     * @expectedException \RuntimeException
+     */
 	public function testUnlock_withNoExistingLock()
 	{
 		$lock = $this->getNewLock();
 
-		try {
-			$this->assertFalse($lock->isLocked());
-			$lock->release();
-		} catch (\RuntimeException $exception) {
-			$this->assertEquals('Can not release lock, no lock exists.', $exception->getMessage());
-			$this->assertFalse($lock->isLocked());
-
-			return 0;
-		}
-		$this->fail('Exception expected.');
+        $this->assertFalse($lock->isLocked());
+        $lock->release();
 	}
 
-	/**
-     * @author stev leibelt <artodeto@bazzline.net>
-	 * @since 2013-01-03
-	 */
 	private function acquireLock()
 	{
 		touch ($this->lockFilePath . '.lock');
 	}
 
-	/**
-     * @author stev leibelt <artodeto@bazzline.net>
-	 * @since 2013-01-03
-	 */
 	private function releaseLock()
 	{
 		$lockFileName = $this->lockFilePath . '.lock';
@@ -192,16 +121,14 @@ class FileLockTest extends PHPUnit_Framework_TestCase
 	}
 
     /**
-     * @param boolean $setName
-     * @return \Net\Bazzline\Component\Lock\FileLock
-     * @author stev leibelt
-     * @since 2013-01-03
+     * @param boolean $setResource
+     * @return \Net\Bazzline\Component\Lock\FileNameLock
      */
-    private function getNewLock($setName = true)
+    private function getNewLock($setResource = true)
     {
-        $lock = new FileLock();
-        if ($setName) {
-            $lock->setName($this->lockFilePath);
+        $lock = new FileNameLock();
+        if ($setResource) {
+            $lock->setResource($this->lockFilePath);
         }
 
         return $lock;

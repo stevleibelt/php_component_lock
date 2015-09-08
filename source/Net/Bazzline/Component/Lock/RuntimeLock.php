@@ -6,61 +6,35 @@
 
 namespace Net\Bazzline\Component\Lock;
 
+use InvalidArgumentException;
 use RuntimeException;
 
 /**
  * Class RuntimeLock
  *
  * @package Net\Bazzline\Component\Lock
- * @author stev leibelt <artodeto@bazzline.net>
- * @since 2013-07-01
  */
 class RuntimeLock implements LockInterface
 {
-    /**
-     * @var string
-     * @author stev leibelt <artodeto@bazzline.net>
-     * @since 2013-07-01
-     */
+    /** @var string */
     private $name;
 
-    /**
-     * @var boolean
-     * @author stev leibelt <artodeto@bazzline.net>
-     * @since 2013-07-01
-     */
+    /** @var boolean */
     private $isLocked;
 
     /**
      * @param string $name
-     * @author stev leibelt <artodeto@bazzline.net>
-     * @since 2013-08-05
+     * @throws InvalidArgumentException
      */
     public function __construct($name = '')
     {
         if (strlen($name) > 0) {
-            $this->setName($name);
+            $this->setResource($name);
         }
     }
 
-	/**
-     * @{inheritdoc}
-	 */
-	public function getName()
-	{
-        return (is_null($this->name)) ? str_replace('\\', '_', get_class($this)) : $this->name;
-	}
-
-	/**
-     * @{inheritdoc}
-	 */
-	public function setName($name)
-	{
-		$this->name = (string) $name;
-	}
-
     /**
-     * @{inheritdoc}
+     * @return bool
      */
     public function isLocked()
     {
@@ -70,7 +44,7 @@ class RuntimeLock implements LockInterface
 
 
     /**
-     * @{inheritdoc}
+     * @throws \RuntimeException
      */
     public function acquire()
     {
@@ -86,7 +60,7 @@ class RuntimeLock implements LockInterface
 
 
     /**
-     * @{inheritdoc}
+     * @throws \RuntimeException
      */
     public function release()
     {
@@ -97,5 +71,22 @@ class RuntimeLock implements LockInterface
 		}
 
         $this->isLocked = false;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getResource()
+    {
+        return (is_null($this->name)) ? str_replace('\\', '_', get_class($this)) : $this->name;
+    }
+
+    /**
+     * @param mixed $resource
+     * @throws InvalidArgumentException
+     */
+    public function setResource($resource)
+    {
+        $this->name = (string) $resource;
     }
 }

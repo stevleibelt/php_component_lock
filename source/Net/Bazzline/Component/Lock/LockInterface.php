@@ -6,57 +6,38 @@
 
 namespace Net\Bazzline\Component\Lock;
 
+use InvalidArgumentException;
+
 /**
  * Class LockInterface
  *
  * @package Net\Bazzline\Component\Lock
- * @author stev leibelt <artodeto@bazzline.net>
- * @since 2013-06-30
  */
 interface LockInterface
 {
 	/**
-     * Validates if lock is acquired
-     *
 	 * @return boolean
-     * @author stev leibelt <artodeto@bazzline.net>
-	 * @since 2013-01-03
 	 */
 	public function isLocked();
 
 	/**
-     * Acquires lock
-     *
      * @throws \RuntimeException
-     * @author stev leibelt <artodeto@bazzline.net>
-	 * @since 2013-01-03
 	 */
 	public function acquire();
 
 	/**
-     * Release lock
-     *
      * @throws \RuntimeException
-     * @author stev leibelt <artodeto@bazzline.net>
-	 * @since 2013-01-03
 	 */
 	public function release();
 
-	/**
-     * Returns name or default
-     *
-     * @return string
-     * @author stev leibelt <artodeto@bazzline.net>
-	 * @since 2013-01-03
-	 */
-	public function getName();
+    /**
+     * @return mixed
+     */
+    public function getResource();
 
-	/**
-     * Sets name
-     *
-	 * @param string $name - name of the lock
-     * @author stev leibelt <artodeto@bazzline.net>
-	 * @since 2013-01-03
-	 */
-	public function setName($name);
+    /**
+     * @param mixed $resource
+     * @throws InvalidArgumentException
+     */
+    public function setResource($resource);
 }

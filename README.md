@@ -13,15 +13,19 @@ This component was created by splitting up the [PHP_Bazzline_Utility](https://gi
 
 # Implementations
 
-Two implementations exists. The *FileLock* and the *RuntimeLock*.
+Two implementations exists. The *FileNameLock* and the *RuntimeLock*.
 
 ## RuntimeLock
 
 The RuntimeLock can be used to lock an instance from modification. If you implement an check in each setter method, you can easily create a instance (by a factory for example) and lock it afterwards to prevent modifications.
 
-## FileLock
+## FileNameLock
 
-The FileLock can be used to lock an class from instantiated multiple times. This is useful if you implement this in cronjobs or business processes that should run alone.
+The FileNameLock can be used to lock an class from instantiated multiple times. This is useful if you implement this in cronjobs or business processes that should run alone.
+
+## FileHandlerLock
+
+The FileHandlerLock can be used to lock file with php`s [flock](https://secure.php.net/manual/en/function.flock.php) functionality.
 
 # Future Improvements
 
@@ -32,10 +36,14 @@ The FileLock can be used to lock an class from instantiated multiple times. This
 
 # History
 
+* [2.0.0](https://github.com/stevleibelt/php_component_lock/tree/2.0.0) - released 2015-09-08
+    * Added *FileHandlerLock*
+    * Renamed *FileLock* to *FileNameLock*
+    * Renamed "getName" to "getResource" and "setName" to "setResource" in "LockInterface"
 * [1.0.3](https://github.com/stevleibelt/php_component_lock/tree/1.0.3)
     * Added LockDependentInterface 
 * [1.0.2](https://github.com/stevleibelt/php_component_lock/tree/1.0.2)
-    * Added constructor with optional parameter $name for *FileLock* and *RuntimeLock*
+    * Added constructor with optional parameter $name for *FileNameLock* and *RuntimeLock*
 * [1.0.1](https://github.com/stevleibelt/php_component_lock/tree/1.0.1)
     * Switched to LGPLv3
 * [1.0.0](https://github.com/stevleibelt/php_component_lock/tree/v1.0.0)
