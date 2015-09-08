@@ -28,6 +28,7 @@ The FileLock can be used to lock an class from instantiated multiple times. This
 * implement "wait" like implemented [here](https://github.com/thecodingmachine/utils.common.lock/blob/master/src/LockInterface.php).
 * take a look to the [semaphore](https://github.com/zerkalica/Semaphore) project to see if thing can be merged
 * take a look if all projects can work together
+* take a look to [havvg/lock](https://github.com/havvg/Lock)
 
 # History
 
