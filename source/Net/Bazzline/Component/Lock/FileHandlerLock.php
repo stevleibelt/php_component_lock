@@ -7,6 +7,7 @@ namespace Net\Bazzline\Component\Lock;
 
 use InvalidArgumentException;
 use RuntimeException;
+use SplFileObject;
 
 /**
  * Class FileHandlerLock
@@ -14,11 +15,14 @@ use RuntimeException;
  */
 class FileHandlerLock implements LockInterface
 {
-    /** @var resource */
+    /** @var resource|SplFileObject */
     private $fileHandler;
 
     /** @var bool */
     private $isLocked = false;
+
+    /** @var bool */
+    private $isResource = false;
 
     /**
      * @return boolean
@@ -33,7 +37,7 @@ class FileHandlerLock implements LockInterface
      */
     public function acquire()
     {
-        if (flock($this->fileHandler, LOCK_EX | LOCK_NB)) {
+        if ($this->lockCouldBeAcquired()) {
             $this->isLocked = true;
         } else {
             throw new RuntimeException(
@@ -47,7 +51,7 @@ class FileHandlerLock implements LockInterface
      */
     public function release()
     {
-        if (flock($this->fileHandler, LOCK_UN | LOCK_NB)) {
+        if ($this->lockCouldBeReleased()) {
             $this->isLocked = false;
         } else {
             throw new RuntimeException(
@@ -57,7 +61,7 @@ class FileHandlerLock implements LockInterface
     }
 
     /**
-     * @return mixed|resource|null
+     * @return mixed|resource|SplFileObject|null
      */
     public function getResource()
     {
@@ -65,13 +69,50 @@ class FileHandlerLock implements LockInterface
     }
 
     /**
-     * @param mixed $resource
+     * @param resource|SplFileObject $resource
      * @throws InvalidArgumentException
      */
     public function setResource($resource)
     {
         if (is_resource($resource)) {
-            $this->fileHandler = $resource;
+            $this->fileHandler  = $resource;
+            $this->isResource   = true;
+        } else if ($resource instanceof SplFileObject) {
+            $this->fileHandler  = $resource;
+            $this->isResource   = false;
+        } else {
+            throw new InvalidArgumentException(
+                'provided resource must be of type "resource" or "SplFileObject"'
+            );
         }
+
+    }
+
+    /**
+     * @return bool
+     */
+    private function lockCouldBeAcquired()
+    {
+        if ($this->isResource) {
+            $couldBeAcquired = flock($this->fileHandler, LOCK_EX | LOCK_NB);
+        } else {
+            $couldBeAcquired = $this->fileHandler->flock(LOCK_EX | LOCK_NB);
+        }
+
+        return $couldBeAcquired;
+    }
+
+    /**
+     * @return bool
+     */
+    private function lockCouldBeReleased()
+    {
+        if ($this->isResource) {
+            $couldBeAcquired = flock($this->fileHandler, LOCK_UN | LOCK_NB);
+        } else {
+            $couldBeAcquired = $this->fileHandler->flock(LOCK_UN | LOCK_NB);
+        }
+
+        return $couldBeAcquired;
     }
 }

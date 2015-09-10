@@ -10,7 +10,7 @@ use PHPUnit_Framework_TestCase;
 use ReflectionClass;
 use RuntimeException;
 
-class FileHandlerLockTest extends PHPUnit_Framework_TestCase
+class FileHandlerLockAsResourceTest extends PHPUnit_Framework_TestCase
 {
 	/** @var string */
 	private $filePath;
