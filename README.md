@@ -38,12 +38,14 @@ The FileHandlerLock can be used to lock file with php`s [flock](https://secure.p
 
 * [2.1.0](https://github.com/stevleibelt/php_component_lock/tree/2.1.0) - released 2015-09-10
     * implemented support for *SplFileObject* in *FileHandlerLock*
+* [2.0.1](https://github.com/stevleibelt/php_component_lock/tree/2.0.1) - released 2015-09-09
+    * stabalized dependencies
 * [2.0.0](https://github.com/stevleibelt/php_component_lock/tree/2.0.0) - released 2015-09-08
     * added *FileHandlerLock*
     * renamed *FileLock* to *FileNameLock*
     * renamed "getName" to "getResource" and "setName" to "setResource" in "LockInterface"
 * [1.0.3](https://github.com/stevleibelt/php_component_lock/tree/1.0.3)
-    * added LockDependentInterface
+    * added LockDependentInterface 
 * [1.0.2](https://github.com/stevleibelt/php_component_lock/tree/1.0.2)
     * added constructor with optional parameter $name for *FileNameLock* and *RuntimeLock*
 * [1.0.1](https://github.com/stevleibelt/php_component_lock/tree/1.0.1)
