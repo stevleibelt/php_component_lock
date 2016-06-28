@@ -36,6 +36,10 @@ The FileHandlerLock can be used to lock file with php`s [flock](https://secure.p
 
 # History
 
+* upcomming
+    * @todo
+    * added integrationtest for php 7.0
+    * removed integrationtest for php 5.3.3
 * [2.2.0](https://github.com/stevleibelt/php_component_lock/tree/2.2.0) - released 2016-06-28
     * added phpunit 5.4 as dependency (if php version is fitting)
     * added process id into the lock file as requested as [feature](https://github.com/stevleibelt/php_component_lock/issues/1)
@@ -58,3 +62,7 @@ The FileHandlerLock can be used to lock file with php`s [flock](https://secure.p
     * added implementation for *FileLock* and *RuntimeLock*
     * covered implementations with unittest
     * finished *LockInterface* and *LockAwareInterface*
+
+# Final Words
+
+Star it if you like it :-). Add issues if you need it. Pull patches if you enjoy it. Write a blog entry if you use it. [Donate something](https://gratipay.com/~stevleibelt) if you love it :-].
