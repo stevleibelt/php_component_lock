@@ -38,6 +38,7 @@ The FileHandlerLock can be used to lock file with php`s [flock](https://secure.p
 
 * upcomming
     * @todo
+        * migrade to psr-4 autoloading
     * added integrationtest for php 7.0
     * removed integrationtest for php 5.3.3
 * [2.2.0](https://github.com/stevleibelt/php_component_lock/tree/2.2.0) - released 2016-06-28
