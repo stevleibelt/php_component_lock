@@ -106,6 +106,17 @@ class FileLockTest extends PHPUnit_Framework_TestCase
         $lock->release();
 	}
 
+    public function testProcessIdInTheLockFile()
+    {
+        $lock = $this->getNewLock();
+        $lock->acquire();
+
+        $expectedLockFileContent    = 'process id: ' . getmypid();
+        $lockFileContent            = file_get_contents($lock->getResource());
+
+        $this->assertEquals($expectedLockFileContent, $lockFileContent);
+    }
+
 	private function acquireLock()
 	{
 		touch ($this->lockFilePath . '.lock');

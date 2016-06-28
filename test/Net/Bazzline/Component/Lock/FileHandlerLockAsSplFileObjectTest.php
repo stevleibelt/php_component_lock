@@ -79,7 +79,7 @@ class FileHandlerLockAsSplFileObjectTest extends PHPUnit_Framework_TestCase
     /**
      * @expectedException RuntimeException
      */
-	public function testAquireLockWithExistingLock()
+	public function testAcquireLockWithExistingLock()
 	{
 		$this->acquireLock();
 		$lock = $this->getNewLock();
