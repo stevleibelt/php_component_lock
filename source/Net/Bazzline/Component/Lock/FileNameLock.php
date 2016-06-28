@@ -42,7 +42,7 @@ class FileNameLock implements LockInterface
             );
 		}
 
-        touch($this->getResource());
+        file_put_contents($this->getResource(), 'process id: ' . getmypid());
 	}
 
     /**

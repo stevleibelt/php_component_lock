@@ -36,6 +36,10 @@ The FileHandlerLock can be used to lock file with php`s [flock](https://secure.p
 
 # History
 
+* [2.2.0](https://github.com/stevleibelt/php_component_lock/tree/2.2.0) - released 2016-06-28
+    * added phpunit 5.4 as dependency (if php version is fitting)
+    * added process id into the lock file as requested as [feature](https://github.com/stevleibelt/php_component_lock/issues/1)
+    * updated dependencies
 * [2.1.0](https://github.com/stevleibelt/php_component_lock/tree/2.1.0) - released 2015-09-10
     * implemented support for *SplFileObject* in *FileHandlerLock*
 * [2.0.1](https://github.com/stevleibelt/php_component_lock/tree/2.0.1) - released 2015-09-09
