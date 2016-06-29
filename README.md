@@ -3,6 +3,17 @@
 The build status of the current master branch is tracked by Travis CI: 
 [![Build Status](https://travis-ci.org/stevleibelt/php_component_lock.png?branch=master)](http://travis-ci.org/stevleibelt/php_component_lock)
 
+@todo
+[![Latest stable](https://img.shields.io/packagist/v/net_bazzline/php_component_curl.svg)](https://packagist.org/packages/net_bazzline/php_component_curl)
+
+@todo The scrutinizer status is:
+[![code quality](https://scrutinizer-ci.com/g/bazzline/php_component_curl/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/bazzline/php_component_curl/)
+
+@todo The versioneye status is:
+[![Dependency Status](https://www.versioneye.com/user/projects/553941560b24225ef6000002/badge.svg?style=flat)](https://www.versioneye.com/user/projects/553941560b24225ef6000002)
+
+Take a look on [openhub.net](https://www.openhub.net/p/php_component_curl).
+
 # General
 
 This component provides the *LockInterface* as well as an *LockAwareInterface*. It comes with two implementations of the LockInterface.
@@ -38,8 +49,9 @@ The FileHandlerLock can be used to lock file with php`s [flock](https://secure.p
 
 * upcomming
     * @todo
-        * migrade to psr-4 autoloading
+* [2.2.1](https://github.com/stevleibelt/php_component_lock/tree/2.2.1) - released 2016-06-29
     * added integrationtest for php 7.0
+    * migrated to psr-4 autoloading
     * removed integrationtest for php 5.3.3
 * [2.2.0](https://github.com/stevleibelt/php_component_lock/tree/2.2.0) - released 2016-06-28
     * added phpunit 5.4 as dependency (if php version is fitting)

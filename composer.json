@@ -23,8 +23,12 @@
         "phpunit/phpunit": "~4.8||~5.4"
     },
     "autoload": {
-        "psr-0": {
-            "Net\\Bazzline\\Component\\Lock\\": "source/",
+        "psr-4": {
+          "Net\\Bazzline\\Component\\Lock\\": "source/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
             "Test\\Net\\Bazzline\\Component\\Lock\\": "test/"
         }
     }
