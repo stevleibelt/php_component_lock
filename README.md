@@ -48,12 +48,12 @@ The FileHandlerLock can be used to lock file with php`s [flock](https://secure.p
 
 * upcomming
     * @todo
+* [2.2.1](https://github.com/stevleibelt/php_component_lock/tree/2.2.1) - released 2016-06-29
+    * added integrationtest for php 7.0
     * added links to:
         * latest stable build
         * scrutinizer code quality
         * versioneye dependency status
-* [2.2.1](https://github.com/stevleibelt/php_component_lock/tree/2.2.1) - released 2016-06-29
-    * added integrationtest for php 7.0
     * migrated to psr-4 autoloading
     * removed integrationtest for php 5.3.3
 * [2.2.0](https://github.com/stevleibelt/php_component_lock/tree/2.2.0) - released 2016-06-28
