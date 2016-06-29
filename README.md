@@ -3,16 +3,15 @@
 The build status of the current master branch is tracked by Travis CI: 
 [![Build Status](https://travis-ci.org/stevleibelt/php_component_lock.png?branch=master)](http://travis-ci.org/stevleibelt/php_component_lock)
 
-@todo
-[![Latest stable](https://img.shields.io/packagist/v/net_bazzline/php_component_curl.svg)](https://packagist.org/packages/net_bazzline/php_component_curl)
+[![Latest stable](https://img.shields.io/packagist/v/net_bazzline/component_lock.svg)](https://packagist.org/packages/net_bazzline/component_lock)
 
-@todo The scrutinizer status is:
-[![code quality](https://scrutinizer-ci.com/g/bazzline/php_component_curl/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/bazzline/php_component_curl/)
+The scrutinizer status is:
+[![code quality](https://scrutinizer-ci.com/g/stevleibelt/php_component_lock/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/stevleibelt/php_component_lock/)
 
-@todo The versioneye status is:
-[![Dependency Status](https://www.versioneye.com/user/projects/553941560b24225ef6000002/badge.svg?style=flat)](https://www.versioneye.com/user/projects/553941560b24225ef6000002)
+The versioneye status is:
+[![Dependency Status](https://www.versioneye.com/user/projects/5773c8a599ed290049b8b9da/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5773c8a599ed290049b8b9da)
 
-Take a look on [openhub.net](https://www.openhub.net/p/php_component_curl).
+Take a look on [openhub.net](https://www.openhub.net/p/php_component_lock).
 
 # General
 
@@ -49,6 +48,10 @@ The FileHandlerLock can be used to lock file with php`s [flock](https://secure.p
 
 * upcomming
     * @todo
+    * added links to:
+        * latest stable build
+        * scrutinizer code quality
+        * versioneye dependency status
 * [2.2.1](https://github.com/stevleibelt/php_component_lock/tree/2.2.1) - released 2016-06-29
     * added integrationtest for php 7.0
     * migrated to psr-4 autoloading
