@@ -15,20 +15,20 @@ use InvalidArgumentException;
  */
 interface LockInterface
 {
-	/**
-	 * @return boolean
-	 */
-	public function isLocked();
+    /**
+     * @return boolean
+     */
+    public function isLocked();
 
-	/**
+    /**
      * @throws \RuntimeException
-	 */
-	public function acquire();
+     */
+    public function acquire();
 
-	/**
+    /**
      * @throws \RuntimeException
-	 */
-	public function release();
+     */
+    public function release();
 
     /**
      * @return mixed

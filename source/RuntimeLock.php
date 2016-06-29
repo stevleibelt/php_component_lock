@@ -48,11 +48,11 @@ class RuntimeLock implements LockInterface
      */
     public function acquire()
     {
-		if ($this->isLocked()) {
-			throw new RuntimeException(
+        if ($this->isLocked()) {
+            throw new RuntimeException(
                 'Can not acquire lock, lock already exists.'
             );
-		}
+        }
 
         $this->isLocked = true;
     }
@@ -64,17 +64,17 @@ class RuntimeLock implements LockInterface
      */
     public function release()
     {
-		if (!$this->isLocked()) {
-			throw new RuntimeException(
+        if (!$this->isLocked()) {
+            throw new RuntimeException(
                 'Can not release lock, no lock exists.'
             );
-		}
+        }
 
         $this->isLocked = false;
     }
 
     /**
-     * @return mixed
+     * @return mixed|string
      */
     public function getResource()
     {
@@ -82,7 +82,7 @@ class RuntimeLock implements LockInterface
     }
 
     /**
-     * @param mixed $resource
+     * @param mixed|string $resource
      * @throws InvalidArgumentException
      */
     public function setResource($resource)

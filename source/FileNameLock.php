@@ -34,37 +34,37 @@ class FileNameLock implements LockInterface
     /**
      * @throws \RuntimeException
      */
-	public function acquire()
-	{
-		if ($this->isLocked()) {
-			throw new RuntimeException(
+    public function acquire()
+    {
+        if ($this->isLocked()) {
+            throw new RuntimeException(
                 'Can not acquire lock, lock already exists.'
             );
-		}
+        }
 
         file_put_contents($this->getResource(), 'process id: ' . getmypid());
-	}
+    }
 
     /**
      * @throws \RuntimeException
      */
-	public function release()
-	{
-		if (!$this->isLocked()) {
-			throw new RuntimeException(
+    public function release()
+    {
+        if (!$this->isLocked()) {
+            throw new RuntimeException(
                 'Can not release lock, no lock exists.'
             );
-		}
+        }
 
         unlink($this->getResource());
-	}
+    }
 
-	/**
+    /**
      * @return bool
-	 */
-	public function isLocked()
-	{
-		return file_exists($this->getResource());
+     */
+    public function isLocked()
+    {
+        return file_exists($this->getResource());
     }
 
     /**
@@ -108,19 +108,19 @@ class FileNameLock implements LockInterface
         return ($stringEnding == $endsWith);
     }
 
-	/**
-	 * @return boolean
-	 */
-	private function isValidName()
-	{
-		return (is_string($this->name) && strlen($this->name) > 0);
-	}
+    /**
+     * @return boolean
+     */
+    private function isValidName()
+    {
+        return (is_string($this->name) && strlen($this->name) > 0);
+    }
 
-	/**
-	 * @return string
-	 */
-	private function getDefaultName()
-	{
-		return (string) str_replace('\\', '_', get_class($this)) . '.lock';
-	}
+    /**
+     * @return string
+     */
+    private function getDefaultName()
+    {
+        return (string) str_replace('\\', '_', get_class($this)) . '.lock';
+    }
 }
