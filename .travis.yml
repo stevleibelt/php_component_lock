@@ -7,6 +7,7 @@ before_script:
   - composer self-update
   - composer install --dev
   - phpenv rehash
+  - echo 'date.timezone = "Europe/Berlin"' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
 script: phpunit -v --colors --coverage-text
 notifications:
   email:
