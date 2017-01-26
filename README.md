@@ -48,6 +48,8 @@ The FileHandlerLock can be used to lock file with php`s [flock](https://secure.p
 
 * upcomming
     * @todo
+* [2.3.0](https://github.com/stevleibelt/php_component_lock/tree/2.3.0) - released 2017-01-26
+    * updated minimum requirements to php 5.6
 * [2.2.1](https://github.com/stevleibelt/php_component_lock/tree/2.2.1) - released 2016-06-29
     * added integrationtest for php 7.0
     * added links to:
