@@ -14,4 +14,3 @@ script: vendor/bin/phpunit -v --colors --coverage-text
 notifications:
   email:
     - artodeto@arcor.de
-sudo: false
