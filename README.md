@@ -11,6 +11,9 @@ The scrutinizer status is:
 The versioneye status is:
 [![Dependency Status](https://www.versioneye.com/user/projects/5773c8a599ed290049b8b9da/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5773c8a599ed290049b8b9da)
 
+Minimum PHP version is:
+[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%205.6-8892BF.svg?style=flat-square)](https://php.net/)
+
 Take a look on [openhub.net](https://www.openhub.net/p/php_component_lock).
 
 # General
