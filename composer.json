@@ -4,7 +4,7 @@
     "description": "php component lock",
     "keywords": ["php", "net_bazzline", "component", "lock"],
     "homepage": "https://github.com/stevleibelt/php_component_lock",
-    "license": "LGPLv3",
+    "license": "LGPL-3.0-or-late",
     "authors": [
         {
             "name": "Stev Leibelt",
