@@ -29,7 +29,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Test\\Net\\Bazzline\\Component\\Lock\\": "test/"
+            "Net\\Bazzline\\Component\\Lock\\Test\\": "test/"
         }
     }
 }
