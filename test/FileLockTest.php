@@ -4,7 +4,7 @@
  * @since 2013-06-30 
  */
 
-namespace Test\Net\Bazzline\Component\Lock;
+namespace Net\Bazzline\Component\Lock\Test;
 
 use Net\Bazzline\Component\Lock\FileNameLock;
 use Net\Bazzline\Component\Lock\LockInterface;

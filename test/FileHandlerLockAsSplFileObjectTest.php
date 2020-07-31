@@ -3,7 +3,7 @@
  * @author stev leibelt <artodeto@bazzline.net>
  * @since 2015-09-08
  */
-namespace Test\Net\Bazzline\Component\Lock;
+namespace Net\Bazzline\Component\Lock\Test;
 
 use Net\Bazzline\Component\Lock\FileHandlerLock;
 use Net\Bazzline\Component\Lock\LockInterface;
